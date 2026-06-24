@@ -1052,9 +1052,9 @@ architecture Behavioral of toplevel is
 
 
   -- IOM ------------------------------------------------------------------------
-  local_frame_flag(0)   <= dip_sw(kStandAlone.Index) and intsig_from_iom(0);
-  local_frame_flag(1)   <= dip_sw(kStandAlone.Index) and intsig_from_iom(1);
-  local_trigger_in      <= dip_sw(kStandAlone.Index) and intsig_from_iom(2);
+  local_frame_flag(0)   <= intsig_from_iom(0);
+  local_frame_flag(1)   <= intsig_from_iom(1);
+  local_trigger_in      <= intsig_from_iom(2);
 
   intsig_to_iom(0)      <= heartbeat_signal;
   intsig_to_iom(1)      <= tcp_isActive(0);
